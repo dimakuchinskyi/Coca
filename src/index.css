@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Prevent all elements from overflowing horizontally */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure all visible text on the page uses Inter by default
+   Exclude `code` and `pre` so monospace rendering remains for code blocks */
+body, body *:not(code):not(pre):not(kbd):not(samp) {
+  font-family: 'Inter', sans-serif;
+}
+html { font-size: 18px; }
+
+code {
+  font-family: 'Inter', monospace;
+}
+
+/* Ensure pages stretch to viewport height so footer can stick to bottom */
+html, body, #root {
+  height: 100%;
+}
+
+/* Page layout helpers: make page roots column flex containers */
+.home-page, .about-page, .pricing-page, .contact-page, .blog-page, .detail-blog-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* If page renders footer as a direct child, push it to bottom */
+.home-page > .site-footer,
+.about-page > .site-footer,
+.pricing-page > .site-footer {
+  margin-top: auto;
+}
+
+/* For pages that use <main>, allow it to grow */
+.home-page main,
+.about-page main,
+.pricing-page main {
+  flex: 1 1 auto;
+}
+
+/* Header: remove default underline/lines on nav links when clicked/focused */
+.header .nav-link {
+  text-decoration: none;
+}
+.header .nav-link:focus,
+.header .nav-link:active {
+  outline: none;
+  text-decoration: none;
+  box-shadow: none;
+}
+.header .nav-link .nav-line { display: none; }
+
+/* Make these rules stronger to override any other stylesheet that may add borders/underlines */
+.header .nav-link,
+.header .nav-link:link,
+.header .nav-link:visited,
+.header .nav-link:focus,
+.header .nav-link:focus-visible,
+.header .nav-link:active,
+.header .nav-link.active {
+  text-decoration: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+/* Hide any pseudo-element based decorative lines on nav links */
+.header .nav-link::after,
+.header .nav-link::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Keep a permanent underline only for the Contact link's decorative line */
+.header .contact-link .nav-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #1D1E25; /* Neutral/100 */
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* Add extra space beneath the footer without changing layout
+   Use the CSS variable to tune how much space you want */
+:root {
+  --site-footer-bottom-space: 120px; /* increase if you want more space */
+}
+
+/* Apply extra footer bottom space only on the Contact page */
+.contact-page > .site-footer {
+  padding-bottom: var(--site-footer-bottom-space);
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1002;
+  position: relative;
+}
+
+.burger-menu span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #1D1E25;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.burger-menu.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Backdrop overlay */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+/* Desktop: show nav inline */
+.nav {
+  display: flex;
+  position: static;
+  width: auto;
+  height: auto;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  gap: 30px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1D1E25;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex !important;
+  }
+
+  .header {
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  .nav {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 80% !important;
+    max-width: 300px !important;
+    height: 100vh !important;
+    background: #ffffff !important;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 80px 30px 30px !important;
+    gap: 24px !important;
+    transition: right 0.3s ease !important;
+    z-index: 1000 !important;
+    align-items: flex-start !important;
+  }
+
+  .nav.nav-open {
+    right: 0 !important;
+  }
+
+  .nav-link {
+    font-size: 18px !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    width: 100% !important;
+  }
+
+  .header .contact-link .nav-line {
+    margin-top: 8px !important;
+  }
+}
