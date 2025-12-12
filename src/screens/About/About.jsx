@@ -187,7 +187,7 @@ function CardsCarousel() {
   const imgRight = require('../../assets/img/about/Rectangle 38.png');
   const imgControls = require('../../assets/img/about/Group 3258.png');
 
-  const [cards, setCards] = useState([
+  const [cards] = useState([
     { src: imgLeft, alt: 'left' },
     { src: imgMiddle, alt: 'middle' },
     { src: imgRight, alt: 'right' },
