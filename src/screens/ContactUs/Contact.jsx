@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { createClient } from '@supabase/supabase-js';
+
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './Contact.css';
 
-const mapImg = require('../../assets/img/contactUs/Location.png');
+const mapImgDesktop = require('../../assets/img/contactUs/Location.png');
 const mapImgMobile = require('../../assets/img/contactUs/Map(1).png');
 
-// Ініціалізуємо Supabase (замініть на ваші дані)
 const SUPABASE_URL = 'https://yyayoewguahxjqpdryjl.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_UsmySmOwrsxRvRHjhOeILw_XU2m7iEl';
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -16,7 +16,6 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 export default function Contact() {
   const location = useLocation();
   const formRef = React.useRef(null);
-  // Зчитування email з query-параметра (окремий useEffect)
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const emailFromQuery = params.get('email');
@@ -24,12 +23,10 @@ export default function Contact() {
       setFormData(prev => ({ ...prev, email: emailFromQuery }));
     }
   }, [location.search]);
-  // Скрол до форми, якщо є #contact-top у url
   useEffect(() => {
     if (location.hash === '#contact-top' && formRef.current) {
       setTimeout(() => {
         formRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        // Можна також сфокусувати email input:
         const emailInput = formRef.current.querySelector('input[name="email"]');
         if (emailInput) emailInput.focus();
       }, 200);
@@ -55,8 +52,7 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Перевіримо обов'язкові поля
+
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
       alert('Будь ласка, заповніть всі обов\'язкові поля!');
       return;
@@ -65,7 +61,6 @@ export default function Contact() {
     console.log('Відправляємо форму в Supabase:', formData);
     
     try {
-      // Зберігаємо в Supabase
       const { data, error } = await supabase
         .from('contact_submissions')
         .insert([
@@ -84,7 +79,7 @@ export default function Contact() {
         throw error;
       }
       
-      console.log('Успішно збережено в Supabase:', data);
+      console.log('Successfully saved in Supabase:', data);
       
       setSubmitted(true);
       setShowToast(true);
@@ -101,12 +96,10 @@ export default function Contact() {
   };
 
   useEffect(() => {
-    // When navigated to /contact#contact-top (or any link to Contact), ensure we scroll to the top of the contact page.
     const scrollToTopAnchor = () => {
       try {
         const el = document.getElementById('contact-top');
         if (el) {
-          // small delay to allow layout to settle
           window.requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }));
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -117,10 +110,8 @@ export default function Contact() {
     };
 
     if (location.hash === '#contact-top') {
-      // prefer scrolling to the element matching the hash
       setTimeout(scrollToTopAnchor, 20);
     } else {
-      // default: ensure top of page when opening contact
       setTimeout(() => window.scrollTo({ top: 0, behavior: 'auto' }), 10);
     }
   }, [location]);
@@ -137,14 +128,11 @@ export default function Contact() {
             </div>
 
             <div className="contact-map-wrap">
-              {typeof window !== 'undefined' && window.innerWidth <= 640 ? (
-                <img src={mapImgMobile} alt="world map" className="contact-map" />
-              ) : (
-                <img src={mapImg} alt="world map" className="contact-map" />
-              )}
+              <picture>
+                <source srcSet={mapImgMobile} media="(max-width: 640px)" />
+                <img src={mapImgDesktop} alt="world map" className="contact-map" />
+              </picture>
             </div>
-
-            {/* Partners section copied from Home */}
 
             <aside className="contact-sidebar">
               <div className="contact-block">
@@ -201,7 +189,6 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            {/* Contact form section (from provided screenshot) */}
             <section className="contact-form-section">
               <div className="container contact-form-inner">
                 <div className="contact-form-left">
@@ -210,7 +197,7 @@ export default function Contact() {
                     <p className="contact-card-sub">You can reach us anytime <a className="contact-email" href="mailto:hellosansbrothers@gmail.com">hellosansbrothers@gmail.com</a></p>
 
                     <form className="contact-card-form" onSubmit={handleSubmit} ref={formRef}>
-                      {submitted && <div style={{color: '#4CAF50', marginBottom: '16px', fontSize: '14px'}}>✓ Спасибо! Ваше сообщение отправлено!</div>}
+                      {submitted && <div style={{color: '#4CAF50', marginBottom: '16px', fontSize: '14px'}}>Success! Your message has been sent!</div>}
                       
                       <div className="cf-row cf-names">
                         <label>
@@ -306,7 +293,6 @@ export default function Contact() {
 
           <Footer variant="about" />
 
-          {/* Toast Notification */}
           {showToast && (
             <div className="toast-notification">
               <div className="toast-content">
@@ -315,8 +301,8 @@ export default function Contact() {
                   <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <div className="toast-text">
-                  <div className="toast-title">Успішно відправлено!</div>
-                  <div className="toast-message">Ваше повідомлення було збережено. Ми зв'яжемося з вами найближчим часом.</div>
+                  <div className="toast-title">Successfully sent!</div>
+                  <div className="toast-message">Your message has been saved. We will contact you soon.</div>
                 </div>
               </div>
             </div>

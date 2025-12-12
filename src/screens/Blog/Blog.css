@@ -72,7 +72,6 @@
     margin-left: -130px !important;
   }
 }
-/* General */
 .blog-page {
     background-color: #fff;
     font-family: 'Inter', sans-serif;
@@ -87,7 +86,6 @@
     padding: 0 15px;
 }
 
-/* Hero Gradient */
 .hero-gradient-bg {
     position: absolute;
     top: -100px;
@@ -99,7 +97,6 @@
     pointer-events: none;
 }
 
-/* Hero Section */
 .blog-hero {
     padding: 250px 0 60px;
     position: relative;
@@ -179,7 +176,6 @@
     background-color: #1D1E25;
 }
 
-/* Recent Posts */
 .blog-recent {
     padding-bottom: 0px;
 }
@@ -266,7 +262,6 @@
     line-height: 1.6;
 }
 
-/* Featured Dark Section */
 .blog-featured {
     background-color: #1D1E25;
     padding: 100px 0;
@@ -307,20 +302,16 @@
 }
 
 .featured-img-wrapper::after {
-    /* gradient overlay removed */
     content: '';
     display: none;
 }
 
-/* keep vertical images showing fully */
 .featured-img-wrapper.vertical-img img {
     object-fit: contain;
     height: auto;
 }
 
-/* Specific adjustment: Webflow card overlap behavior */
 
-/* Nudge images in the right column to normal state */
 .featured-col-right .featured-item .featured-img-wrapper img {
     transform: none;
 }
@@ -329,17 +320,14 @@
     margin-bottom: 30px;
 }
 
-/* Lift the first featured image in the right column (the "How to ask..." photo) */
 .featured-col-right .featured-item:first-child .featured-img-wrapper {
     position: relative;
     transform: translateY(-20px);
 }
 
-/* For the Webflow card use the helper class `shift-webflow` to overlap the headline on the image */
 .featured-item.shift-webflow .featured-img-wrapper {
-    margin-top: 32px; /* original placement */
-    margin-bottom: 280px; /* keep text overlapping but less aggressively */
-    /* visually lift only the photo upward without changing DOM order */
+    margin-top: 32px;
+    margin-bottom: 280px;
     position: relative;
     transform: translateY(13px);
 }
@@ -347,12 +335,11 @@
 .featured-item.shift-webflow .featured-title-small,
 .featured-item.shift-webflow .featured-desc-small {
     position: relative;
-    z-index: 6; /* above the image overlay */
+    z-index: 6;
     color: #fff;
     text-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
-/* Ensure the shifted Webflow headline matches the design: Inter 600, 40px, 1.2, underline */
 .featured-item.shift-webflow .featured-title-small {
     font-weight: 600;
     font-size: 40px;
@@ -363,7 +350,6 @@
     text-decoration-color: #FFFFFF;
     text-underline-offset: 10px;
     text-decoration-thickness: auto;
-    /* visually lift this specific heading a bit */
     position: relative;
     transform: translateY(-8px);
 }
@@ -372,35 +358,33 @@
     opacity: 1;
     color: #EDEDED;
     max-width: 85%;
-    /* Add underline and lower it specifically for this paragraph */
     text-decoration-style: solid;
     text-decoration-color: #EDEDED;
-    text-underline-offset: 8px; /* lowered only for this paragraph */
+    text-underline-offset: 8px;
     text-decoration-thickness: auto;
 }
 
-/* Lower images in the right column slightly so they sit lower visually */
 .featured-col-right .featured-item .featured-img-wrapper {
     margin-top: 20px;
 }
 
 .vertical-img {
-    height: auto; /* allow image to define height so it is not cropped */
-    max-height: none; /* remove desktop cap so full image is visible */
+    height: auto;
+    max-height: none;
 }
 
 .landscape-img {
-    height: auto; /* allow image to determine height so it won't be cropped */
-    max-height: 460px; /* keep an upper bound to avoid extremely tall blocks */
+    height: auto;
+    max-height: 460px;
 }
 
 .featured-title-large,
 .featured-title-small {
     font-family: 'Inter', sans-serif;
-    font-weight: 600; /* Semi Bold */
+    font-weight: 600;
     font-style: normal;
     font-size: 40px;
-    line-height: 1.2; /* 120% */
+    line-height: 1.2;
     letter-spacing: 0;
     vertical-align: middle;
     margin-bottom: 20px;
@@ -409,7 +393,6 @@
     text-decoration-style: solid;
     text-decoration-color: #FFFFFF;
     text-underline-offset: 10px;
-    /* Use automatic thickness so browsers choose an appropriate underline */
     text-decoration-thickness: auto;
 }
 
@@ -434,7 +417,6 @@
     line-height: 1.6;
 }
 
-/* Articles Section */
 .blog-articles {
     padding: 30px 0;
 }
@@ -448,9 +430,9 @@
 
 .section-title {
     font-family: 'Inter', sans-serif;
-    font-weight: 600; /* Semi Bold */
+    font-weight: 600;
     font-size: 56px;
-    line-height: 1.2; /* 120% */
+    line-height: 1.2;
     letter-spacing: -2px;
     vertical-align: middle;
     color: #1D1E25;
@@ -458,7 +440,7 @@
 
 .section-subtitle {
     font-family: 'Inter', sans-serif;
-    font-weight: 500; /* Medium */
+    font-weight: 500;
     font-size: 18px;
     line-height: 32px;
     letter-spacing: 0;
@@ -494,7 +476,6 @@
     border-color: #1D1E25;
 }
 
-/* Image inside nav button should scale to fit the button */
 
 
 .articles-grid {
@@ -523,9 +504,8 @@
     object-fit: cover;
 }
 
-/* For the first article, don't crop the image by height — show full image */
 .articles-grid .article-card:first-child .article-img-wrapper {
-    height: auto; /* let the image define height */
+    height: auto;
     overflow: visible;
     max-height: none;
 }
@@ -536,9 +516,8 @@
     display: block;
 }
 
-/* For the third article, don't crop the image by height — show full image */
 .articles-grid .article-card:nth-child(3) .article-img-wrapper {
-    height: auto; /* let the image define height */
+    height: auto;
     overflow: visible;
     max-height: none;
 }
@@ -595,7 +574,6 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* CTA Section */
 .blog-cta-section {
     padding: 100px 0;
     border-top: 1px solid #E7E9ED;
@@ -669,7 +647,6 @@
     box-shadow: 0 20px 48px rgba(6, 11, 26, 0.24);
 }
 
-/* Responsive */
 @media (max-width: 992px) {
 
     .recent-grid,
@@ -708,24 +685,20 @@
         display: none;
     }
 
-    /* Make landscape images shorter on small screens so layout stays compact */
     .landscape-img { max-height: 220px; }
-    /* Limit vertical images on small screens as well */
     .vertical-img { max-height: 420px; }
 }
 
-/* For shift-webflow: don't crop the image — show full image instead */
 .featured-item.shift-webflow .featured-img-wrapper {
-    overflow: visible; /* allow the image to extend so it is not cropped */
+    overflow: visible;
 }
 
 .featured-item.shift-webflow .featured-img-wrapper img {
-    object-fit: contain; /* show full image without cropping */
+    object-fit: contain;
     height: auto;
     max-width: 100%;
 }
 
-/* Mobile adaptation for max-width: 640px */
 @media (max-width: 640px) {
   .blog-page {
     background-color: #fff;
@@ -784,12 +757,10 @@
     margin-bottom: -20px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    /* Приховування скролбара */
-    -ms-overflow-style: none;  /* IE та Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  /* Для Chrome, Safari */
   .blog-tabs::-webkit-scrollbar {
     display: none;
   }
@@ -833,7 +804,6 @@
     scroll-snap-align: start;
   }
 
-  /* Приховування скролбара */
   .recent-grid::-webkit-scrollbar,
   .articles-grid::-webkit-scrollbar {
     display: none;

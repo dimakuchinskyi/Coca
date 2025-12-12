@@ -1,3 +1,9 @@
+.contact-page input:focus,
+.contact-page textarea:focus {
+  outline: 0px solid #1D1E25 !important;
+  box-shadow: none !important;
+  border-color: #1D1E25 !important;
+}
 @media (max-width: 640px) {
   .contact-page .contact-form-section {
     margin-bottom: 80px !important;
@@ -181,14 +187,10 @@
     align-items: center !important;
   }
 }
-/* Contact page styles */
 .contact-hero {
-  /* top padding increased to create more space under the header */
-  --contact-hero-pt: 100px; /* reduced to remove excess top black space */
+  --contact-hero-pt: 100px;
   padding: var(--contact-hero-pt) 0 90px;
-  /* shift for the short centered dividers; negative = left, positive = right */
   --contact-divider-shift: -35px;
-  /* amount to nudge the right column (contact sidebar) horizontally; positive = right */
   --contact-sidebar-shift: 100px;
 }
 .contact-grid { display: grid; grid-template-columns: 1fr 720px 340px; gap: 32px; align-items: start; max-width: 1200px; margin: 0 auto; }
@@ -197,7 +199,6 @@
 .contact-map { width: 100%; height: auto; display: block; border-radius: 6px; }
 .contact-marker {
   position: absolute;
-  /* place marker using percents so it stays on the map responsively */
   left: 66%;
   top: 62%;
   width: 48px;
@@ -213,29 +214,27 @@
 .contact-sidebar { grid-column: 3 / 4; display:flex; flex-direction:column; gap: 28px; align-self: center; margin-left: var(--contact-sidebar-shift, 24px); }
 .contact-title {
   font-family: 'Inter', sans-serif;
-  font-size: 72px; /* per design */
+  font-size: 72px;
   font-weight: 700;
-  line-height: 1.2; /* 120% */
-  letter-spacing: -3px; /* per design */
-  color: #1D1E25; /* Neutral/100 */
+  line-height: 1.2;
+  letter-spacing: -3px;
+  color: #1D1E25;
   margin: 24px 0 40px;
-  max-width: 741px; /* match design width */
-  height: 172px; /* approx design height to help vertical rhythm */
+  max-width: 741px;
+  height: 172px;
   display: flex;
-  align-items: center; /* vertical align middle */
+  align-items: center;
 }
 .contact-block {
   padding-bottom: 12px;
   position: relative;
-  border-bottom: none; /* use short centered divider instead of full-width */
+  border-bottom: none;
 }
 
-/* Short centered divider (166px) under each block (including last) */
 .contact-block::after {
   content: "";
   position: absolute;
   left: 50%;
-  /* translateX combines a 50% center with an additional shift variable */
   transform: translateX(calc(-50% + var(--contact-divider-shift, -20px)));
   bottom: 0;
   width: 166px;
@@ -245,10 +244,10 @@
 .contact-block-title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 24px; /* per spec */
-  line-height: 32px; /* per spec */
+  font-size: 24px;
+  line-height: 32px;
   margin: 0 0 8px;
-  color: #1D1E25; /* Neutral/100 */
+  color: #1D1E25;
 }
 .contact-block-sub {
   margin: 0 0 20px;
@@ -257,18 +256,17 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0;
-  color: #7E8492; /* Neutral/60 per spec */
+  color: #7E8492;
 }
 .contact-block-link {
   display: inline-block;
-  width: 149px; /* per design */
-  height: 26px; /* per design */
-  line-height: 26px; /* vertically center text */
-  text-align: center; /* horizontal center */
+  width: 149px;
+  height: 26px;
+  text-align: center;
   font-family: 'Inter', sans-serif;
-  font-size: 16px; /* per design */
-  font-weight: 500; /* medium */
-  color: #1D1E25; /* Neutral/100 */
+  font-size: 16px;
+  font-weight: 500;
+  color: #1D1E25;
   letter-spacing: 0;
   text-decoration: none;
   vertical-align: middle;
@@ -281,21 +279,17 @@
   .contact-left { order: 1; }
   .contact-title { font-size: 42px; }
   .contact-marker { left: 72%; top: 70%; transform: translate(-50%, -50%); }
-  /* reduce top padding on smaller screens to preserve vertical space */
   .contact-hero { padding: 56px 0 80px; }
 }
 
-/* Footer bottom spacing for Contact page (reset to normal) */
 .contact-page > .site-footer {
   padding-bottom: 48px;
 }
 
-/* Prevent horizontal scrolling on Contact page (hide any overflow caused by shifted image/layout) */
 .contact-page {
   overflow-x: hidden;
 }
 
-/* Partners section styles (copied from Home.css) */
 .contact-partners { background: #ffffff; padding: 40px 0 48px; position: relative; border-top: none; }
 .contact-partners::before {
   content: "";
@@ -307,10 +301,8 @@
   background: #eee;
 }
 
-/* Remove the decorative gray line on Contact page when not wanted */
 .contact-partners::before { display: none !important; }
 .contact-partners {
-  /* standard bottom space to separate partners from footer on Contact page */
   --contact-partners-bottom-space: 0px;
   padding-bottom: calc(48px + var(--contact-partners-bottom-space));
 }
@@ -330,9 +322,7 @@
   .contact-partners .google-logo, .contact-partners .ola-logo { grid-column: auto; grid-row: auto; }
 }
 
-/* Contact form section (screenshot) */
 .contact-form-section { background: transparent; padding: 8px 0 0; margin-top: 150px; }
-/* Increase bottom space below the contact form to match design spacing */
 .contact-page .contact-form-section { margin-bottom: 200px; }
 .contact-form-inner { display: grid; grid-template-columns: 608px 987px; gap: 0; align-items: start; max-width: 1700px; margin: 0 auto; transform: translateX(120px); }
 .contact-form-left { display:flex; align-items:flex-start; }
@@ -346,7 +336,6 @@
 .cf-label { font-size: 13px; color: #7E8492; margin-bottom: 8px; }
 .cf-input { padding: 16px 18px; border: 1px solid rgba(15,23,32,0.06); border-radius: 8px; font-size: 15px; height: 48px; box-sizing: border-box; width: 100%; }
 .cf-textarea { min-height: 220px; padding: 16px 18px; border-radius: 8px; border: 1px solid rgba(15,23,32,0.06); resize: vertical; font-size: 15px; width: 100%; }
-/* Ensure labels and input wrappers fill available width */
 .contact-card-form label, .contact-card-form input, .contact-card-form textarea { width: 100%; display: block; }
 .cf-submit {
   margin-top: 12px;
@@ -397,7 +386,6 @@
   .contact-partners .partners-logos { column-gap: 80px; }
 }
 
-/* Reuse Pricing CTA styles for Contact page footer CTA */
 .contact-page .site-cta { background: #1D1E25; color: #fff; padding: 100px 0 72px !important; }
 .contact-page .site-cta .cta-inner { display: grid; grid-template-columns: 720px 220px; gap: 24px; align-items: center; }
 .contact-page .site-cta .cta-title { font-family: 'Inter', sans-serif; font-size: 64px; line-height: 1.2; margin: 0 0 24px 0; font-weight: 600; letter-spacing: 0; max-width: 720px; height: 77px; color: #ffffff; }
@@ -447,12 +435,10 @@
   .contact-partners .partners-logos { grid-template-columns: repeat(2, auto); column-gap: 24px; }
 }
 
-/* Fallback / force: ensure the contact hero padding is applied even if other rules override it */
 .contact-page .contact-hero {
   padding: 100px 0 90px !important;
 }
 
-/* Toast Notification */
 .toast-notification {
   position: fixed;
   top: 24px;

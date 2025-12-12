@@ -1,7 +1,28 @@
+@media (max-width: 640px) {
+	.about-page .hero-description {
+		position: relative;
+		padding-left: 36px !important;
+	}
+	.about-page .hero-description::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: -30px;
+		top: 0px;
+		width: 24px;
+		height: 2px;
+		background: #000;
+		border-radius: 1px;
+	}
+}
+@media (max-width: 640px) {
+	.hero-description {
+		margin-top: -18px !important;
+	}
+}
 @media (min-width: 1024px) {
 	.about-page .hero-right .linked-path {
 		margin-top: 420px;
-		/* Можна змінити значення для потрібної висоти */
 		display: block;
 	}
 }
@@ -38,7 +59,10 @@
 		display: none !important;
 	}
 	.hero-description {
-		margin: 0;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		position: relative;
+		top: -18px;
 	}
 }
 
@@ -198,7 +222,6 @@
 		text-align: left !important;
 	}
 }
-/* Індивідуальний відступ між текстом і іконками для Roger Dzawin (десктоп) */
 @media (max-width: 640px) {
 	.team-card .card-header {
 		display: flex !important;
@@ -247,7 +270,6 @@
 	}
 }
 @media (max-width: 640px) {
-	/* Явно вмикаємо іконки соцмереж для мобільного */
 	.team-card .social-icons {
 		display: flex !important;
 		align-items: center !important;
@@ -269,13 +291,10 @@
 		opacity: 1 !important;
 	}
 }
-/* Приховати мобільний текст на десктопі */
 .team-desc-mobile {
 	display: none;
 }
-/* --- Мобільна сіра лінія перед .about-cta --- */
 @media (max-width: 640px) {
-	/* Гарантовано збільшуємо відступ під заголовком */
 	.team-title {
 		padding-bottom: 24px !important;
 	}
@@ -365,7 +384,6 @@
 		margin-bottom: 8px !important;
 	}
 }
-/* --- Мобільна версія: тільки одне правило для .card.card-center .card-body і .card-media img --- */
 @media (max-width: 640px) {
 	.about-page .card.card-center .card-body {
 		width: 320px !important;
@@ -462,10 +480,6 @@
 	}
 }
 @media (max-width: 640px) {
-	.hero-description::before {
-		display: none !important;
-		content: none !important;
-	}
 	.about-page .hero-paragraph {
 		display: flex !important;
 		align-items: flex-start !important;
@@ -476,14 +490,11 @@
 		position: static !important;
 		margin: 0 !important;
 	}
-	/* видалено дубль */
 }
 @media (max-width: 640px) {
-	/* Для мобільної: ховаємо картинку-лінію, показуємо псевдоелемент */
 	.about-page .hero-paragraph .linked-line {
 		display: none !important;
 	}
-	/* видалено дубль */
 }
 @media (max-width: 968px) {
 	.about-page .hero-paragraph img.linked-line {
@@ -505,14 +516,12 @@
 		display: none !important;
 	}
 }
-/* --- Мобільна лінія: підвищена специфічність та !important --- */
 @media (max-width: 640px) {
 	.about-page .hero-paragraph .linked-line,
 	.about-page .hero-paragraph .linked-line * {
 		display: none !important;
 	}
 }
-/* --- Мобільна версія: всі мобільні стилі в кінці файлу --- */
 .hero-description-mobile { display: none; }
 @media (max-width: 640px) {
 	.about-page .hero-paragraph {
@@ -528,6 +537,9 @@
 		max-width: 420px !important;
 		margin-left: 0 !important;
 		padding-left: 0 !important;
+		margin-top: -10px !important;
+		margin-bottom: 50px !important;
+		position: static !important;
 	}
 	.hero-description-mobile { display: block; }
 	.about-page .hero-title {
@@ -898,8 +910,6 @@
 	transform: translateX(-50%);
 	z-index: 0;
 }
-
-/* Support explicit about-style footer via modifier class */
 .site-footer--about {
 	position: relative;
 	z-index: 1000;
@@ -977,7 +987,6 @@
 	.about-page .hero-left { padding-left: 30px; }
 	.about-page .hero-left::before { display: none; }
 
-	/* Mobile hero section */
 	.about-page .hero-content { flex-direction: column; }
 	.about-page .hero-left { padding-top: 170px; width: 100%; }
 	   .about-page .hero-title {
@@ -1053,23 +1062,15 @@
   }
 }
 @media (max-width: 640px) {
-  /* Для першої картки */
-	/* Для першої картки */
 	.team-card:nth-child(1) .card-header {
 		margin-top: -10px;
 		gap: 55px !important;
 	}
-	/* Для другої картки */
-	/* Для третьої картки */
 	.team-card:nth-child(3) .card-header {
 		margin-top: -10px;
 		gap: 30px !important;
 	}
 }
-/* --- Десктопний індивідуальний відступ для Roger Dzawin --- */
-
-/* --- Десктопний індивідуальний відступ для Roger Dzawin --- */
-/* Додається в кінець файлу для максимальної специфічності */
 .team-card.team-card--roger .card-header {
 	margin-top: -10px;
 	gap: 0px !important;

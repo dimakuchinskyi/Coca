@@ -1,3 +1,9 @@
+.pricing-card--featured .card-cta {
+	padding-top: 15px !important;
+}
+.card-cta {
+	text-decoration: none !important;
+}
 @media (max-width: 640px) {
 	.site-footer--about .footer-bottom::before {
 		margin-bottom: 74px !important;
@@ -166,7 +172,6 @@
 	}
   }
 }
-/* Перебиваємо всі мобільні стилі для іконки Popular — опускаємо нижче */
 @media (max-width: 640px) {
 	.pricing-card--featured .card-icon {
 		margin-top: 40px !important;
@@ -192,7 +197,6 @@
 		white-space: pre-line !important;
 	}
 }
-/* Мобільна адаптація: padding для .pricing-hero */
 @media (max-width: 640px) {
   .pricing-hero {
     margin: -60px 0 16px !important;
@@ -238,7 +242,6 @@
 	.pricing-page .site-cta .cta-right { margin-top: 18px; text-align: left; }
 }
 
-/* Pricing hero */
 .pricing-hero { padding: 200px 0 40px; background: radial-gradient( circle at 20% 20%, rgba(249,231,226,0.4), transparent 20%), radial-gradient( circle at 85% 60%, rgba(219,246,237,0.45), transparent 18% ); }
 .pricing-hero .container { max-width: 1100px; margin: 0 auto; text-align: center; }
 .pricing-badge { display: inline-block; background: #EAF2FF; color: #0B4FFF; padding: 8px 14px; border-radius: 20px; font-weight: 600; margin-bottom: 18px; }
@@ -249,26 +252,21 @@
 .toggle-btn[aria-pressed="true"] { background: #E9ECEF; }
 .toggle-btn .toggle-knob { width:24px; height:24px; background:#0B4FFF; border-radius:50%; display:block; box-shadow: 0 6px 18px rgba(11,79,255,0.28); }
 
-/* Disabled (fixed-on) appearance - prevent pointer and focus */
 .toggle-btn[disabled], .toggle-btn[aria-disabled="true"] {
 	pointer-events: none;
 	cursor: default;
 }
 .toggle-btn[disabled] .toggle-knob, .toggle-btn[aria-disabled="true"] .toggle-knob {
-	/* ensure knob stays blue */
 	background: #0B4FFF;
 }
 
-/* Pricing cards */
 .pricing-cards { display:grid; grid-template-columns: 1fr 420px 1fr; gap: 28px; align-items:stretch; max-width:1200px; margin: 48px auto 80px; }
 .pricing-card { background: #fff; border-radius: 12px; padding: 30px; box-shadow: none; border: 1px solid rgba(15,23,32,0.04); text-align:left; display:flex; flex-direction:column; justify-content:space-between; height:800px; box-sizing:border-box; }
 .pricing-card .card-icon { width:64px; height:64px; border-radius:0; background:transparent; display:flex; align-items:center; justify-content:center; font-size:18px; margin-bottom:1px; }
 .pricing-card .card-icon { width:64px; height:64px; border-radius:0; background:transparent; display:flex; align-items:center; justify-content:center; font-size:18px; margin-bottom:0; }
 .pricing-card .card-icon img { width:40px; height:40px; display:block; }
-/* Slightly raise the icon inside pricing cards to match design */
 .pricing-card .card-icon { transform: translateY(-6px); }
 
-/* Посуваємо іконку (сердечко / корона) трохи лівіше на світлих картках */
 .pricing-card:not(.pricing-card--featured) .card-icon {
 	align-self: flex-start;
 	margin-left: -14px;
@@ -278,14 +276,13 @@
 .pricing-card .card-price { margin: 12px 0 18px; color:#0f1720; }
 .pricing-card .price-amount { margin-right:8px; }
 
-/* Starter & Enterprise specific typography (light cards) */
 .pricing-card:not(.pricing-card--featured) .card-desc {
 	font-family: 'Inter', sans-serif;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 26px;
 	letter-spacing: 0;
-	color: #7E8492; /* Neutral/60 */
+	color: #7E8492;
 	max-width: 330px;
 }
 
@@ -295,7 +292,7 @@
 	font-size: 56px;
 	line-height: 1.2;
 	letter-spacing: -2px;
-	color: #1D1E25; /* Neutral/100 */
+	color: #1D1E25;
 }
 
 .pricing-card:not(.pricing-card--featured) .price-suffix {
@@ -304,32 +301,27 @@
 	font-size: 16px;
 	line-height: 26px;
 	letter-spacing: 0;
-	color: #7E8492; /* Neutral/60 */
+	color: #7E8492;
 }
 
-/* Заголовок Starter / Enterprise за макетом */
 .pricing-card:not(.pricing-card--featured) .card-title {
 	font-family: 'Inter', sans-serif;
 	font-weight: 600;
 	font-size: 24px;
 	line-height: 34px;
 	letter-spacing: 0;
-	color: #1D1E25; /* Neutral/100 */
-	/* піднімаємо заголовок ближче до іконки */
+	color: #1D1E25;
 	margin: 0 0 10px;
 }
 
-/* Піднімаємо опис трохи ближче до заголовка */
 .pricing-card:not(.pricing-card--featured) .card-desc {
 	margin: -6px 0 14px;
 }
 
-/* Піднімаємо блок з ціною $100 /mo */
 .pricing-card:not(.pricing-card--featured) .card-price {
 	margin: 8px 0 10px;
 }
 
-/* Піднімаємо "What's included" ближче до ціни на світлих картках */
 .pricing-card:not(.pricing-card--featured) .features-title {
 	margin: 4px 0 12px;
 }
@@ -349,7 +341,7 @@
 	background: transparent;
 	border: 1px solid rgba(15,23,32,0.06);
 	padding: 0 24px;
-	height: 56px; /* фіксована висота для всіх кнопок в картках */
+	height: 56px;
 	border-radius: 999px;
 	cursor: pointer;
 	font-family: 'Inter', sans-serif;
@@ -364,17 +356,15 @@
     will-change: transform;
 }
 
-/* Кнопки на світлих картках (Starter, Enterprise) – фіксована ширина 160px */
 .pricing-card:not(.pricing-card--featured) .card-cta {
 	width: 160px;
-	color: #1D1E25; /* Neutral/100 */
-	margin: 32px auto 0; /* по центру картки */
+	color: #1D1E25;
+	margin: 32px auto 0;
 }
 
-/* Hover: subtle lift for light-card buttons (override global) */
 .pricing-card:not(.pricing-card--featured) .card-cta:hover {
-	background: transparent; /* keep transparent background */
-	color: #1D1E25; /* keep dark text */
+	background: transparent;
+	color: #1D1E25;
 	transform: translateY(-6px);
 	box-shadow: 0 8px 20px rgba(15,23,32,0.06);
 	border-color: rgba(15,23,32,0.08);
@@ -383,14 +373,14 @@
  .pricing-card--featured { background:#0d1630; color:#fff; padding:36px; transform: translateY(-60px); box-shadow: none; border: none; display:flex; flex-direction:column; justify-content:space-between; height:800px; box-sizing:border-box; z-index: 20; position: relative; }
 .pricing-card--featured .card-top-badge {
 	position: absolute;
-	top: 42px; /* align vertically with the icon center */
-	right: 36px; /* align with card padding */
+	top: 42px;
+	right: 36px;
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	background: #1463FF; /* primary color from design */
+	background: #1463FF;
 	color: #ffffff;
-	padding: 6px 12px; /* top 6, right 12, bottom 6, left 12 */
+	padding: 6px 12px;
 	height: 32px;
 	box-sizing: border-box;
 	width: 118px;
@@ -425,7 +415,6 @@
 }
 .pricing-card--featured .card-icon {
 		background: transparent;
-		/* Посуваємо іконку лівіше тільки в центральній картці */
 		margin-left: -14px;
 }
 @media (min-width: 641px) {
@@ -449,7 +438,6 @@
 	line-height: 34px;
 	letter-spacing: 0px;
 	color: #FFFFFF;
-	/* піднімаємо заголовок ближче до іконки */
 	margin: 6px 0 12px;
 }
 .pricing-card--featured .card-desc { color: rgba(255,255,255,0.8); }
@@ -459,7 +447,7 @@
 	font-size: 14px;
 	line-height: 20px;
 	letter-spacing: 0;
-	color: #7E8492; /* Neutral/60 */
+	color: #7E8492;
 	max-width: 330px;
 	margin: -6px 0 18px;
 }
@@ -497,7 +485,6 @@
 
 .pricing-card--featured .features-title {
 	color: #FFFFFF;
-	/* зменшили нижній відступ, щоб список був ближче до заголовка */
 	margin: 4px 0 24px;
 }
 
@@ -535,14 +522,14 @@
 	height: 20px;
 	flex: 0 0 20px;
 	background: url('../../assets/img/pricing/Icon(10).png') no-repeat center center;
-	background-size: 20px 20px; /* той самий розмір, що й у інших чеків */
+	background-size: 20px 20px;
 }
 .card-cta--white { background:#fff; color:#0d1630; border:none; padding:12px 20px; }
 .pricing-card--featured .card-cta--white {
 	display: block;
 	margin: 28px auto 0;
 	padding: 0 36px;
-	height: 56px; /* така ж висота, як і в інших кнопок */
+	height: 56px;
 	min-width: 160px;
 	text-align: center;
 	border-radius: 999px;
@@ -553,7 +540,6 @@
     transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
-/* Featured CTA hover: lift and stronger shadow */
 .pricing-card--featured .card-cta--white:hover {
     transform: translateY(-8px);
     box-shadow: 0 18px 40px rgba(6,11,26,0.35);
@@ -570,30 +556,28 @@
 
 .pricing-card:not(.pricing-card--featured) .card-features li.muted::before {
 	content: '';
-	background: url('../../assets/img/pricing/Icon(10).png') no-repeat center center; /* сірий круг з галочкою */
-	background-size: contain;
+	background: url('../../assets/img/pricing/Icon(10).png') no-repeat center center;
 }
 
-/* FAQ section */
 .pricing-faq { padding: 80px 0; }
 .pricing-faq .faq-title {
 	font-family: 'Inter', sans-serif;
 	font-size: 56px;
-	line-height: 1.2; /* 120% */
-	font-weight: 600; /* Semi Bold per spec */
-	color: #1D1E25; /* Neutral/100 per spec */
+	line-height: 1.2;
+	font-weight: 600;
+	color: #1D1E25;
 	text-align: center;
 	margin: 0 0 18px;
-	letter-spacing: -2px; /* per spec */
+	letter-spacing: -2px;
 }
 .pricing-faq .faq-desc {
 	font-family: 'Inter', sans-serif;
-	font-weight: 500; /* Medium */
+	font-weight: 500;
 	font-size: 18px;
-	line-height: 32px; /* vertical rhythm */
+	line-height: 32px;
 	letter-spacing: 0;
-	color: #7E8492; /* Neutral/60 per spec */
-	max-width: 510px; /* per layout spec */
+	color: #7E8492;
+	max-width: 510px;
 	margin: 0 auto 28px;
 	text-align: center;
 }
@@ -604,10 +588,10 @@
 	list-style: none;
 	cursor: pointer;
 	font-family: 'Inter', sans-serif;
-	font-weight: 600; /* per spec */
-	font-size: 24px; /* per spec */
-	line-height: 1.5; /* 150% */
-	color: #1D1E25; /* Neutral/100 per spec */
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 1.5;
+	color: #1D1E25;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -620,20 +604,19 @@
 .pricing-faq .faq-item summary::after {
 	content: '';
 	display: inline-block;
-	width: 14px; /* smaller plus icon */
+	width: 14px;
 	height: 14px;
 	flex: 0 0 14px;
-	background: url('../../assets/img/pricing/Icon(12).png') no-repeat center/contain; /* plus icon (smaller) */
+	background: url('../../assets/img/pricing/Icon(12).png') no-repeat center/contain;
 }
 .pricing-faq .faq-item[open] summary::after {
-	background-image: url('../../assets/img/pricing/Icon(11).png'); /* minus icon when open */
+	background-image: url('../../assets/img/pricing/Icon(11).png');
 }
 .pricing-faq .faq-answer {
-	margin-top: 16px; /* paragraph spacing per spec */
+	margin-top: 16px;
 	color: rgba(15,23,32,0.65);
 	font-size: 14px;
 	line-height: 22px;
-	/* hidden-by-default animation-ready state */
 	max-height: 0;
 	overflow: hidden;
 	opacity: 0;
@@ -642,7 +625,6 @@
 }
 
 .pricing-faq .faq-item[open] .faq-answer {
-	/* sufficiently large to contain most answers; safe upper bound */
 	max-height: 560px;
 	opacity: 1;
 	transform: translateY(0);
@@ -663,7 +645,5 @@
 	.pricing-card { transform:none; }
 	.pricing-card--featured { transform:none; }
 	.pricing-hero { padding:72px 0 40px; }
-
-	/* On small screens keep badge in flow above the icon */
 	.pricing-card--featured .card-top-badge { position: static; right: auto; top: auto; margin-left: 0; margin-bottom: 12px; }
 }

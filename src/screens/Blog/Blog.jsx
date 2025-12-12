@@ -4,15 +4,6 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './Blog.css';
 
-// Reusing images
-import img1 from '../../assets/img/home/Rectangle 5650.png';
-import img2 from '../../assets/img/home/Rectangle 5651.png';
-import img3 from '../../assets/img/home/Image(2).png';
-import img4 from '../../assets/img/home/Image(3).png';
-import img5 from '../../assets/img/home/Frame 1171275175.png';
-import img6 from '../../assets/img/home/Frame 1171275176.png';
-
-// New Blog Images
 import blogRecent1 from '../../assets/img/blog/Rectangle 34.png';
 import blogRecent2 from '../../assets/img/blog/Image(5).png';
 import blogRecent3 from '../../assets/img/blog/Image(6).png';
@@ -81,7 +72,7 @@ export default function Blog() {
 
     const scrollArticles = (direction) => {
         if (articlesGridRef.current) {
-            const scrollAmount = 400; // Width of one card plus gap
+            const scrollAmount = 400;
             if (direction === 'next') {
                 articlesGridRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             } else {
@@ -95,7 +86,6 @@ export default function Blog() {
             <div className="hero-gradient-bg"></div>
             <Header />
 
-            {/* Hero Section */}
             <section className="blog-hero">
                 <div className="blog-container">
                     <h1 className="blog-title">Activity & Updates</h1>
@@ -120,7 +110,6 @@ export default function Blog() {
                 </div>
             </section>
 
-            {/* Recent Posts Section */}
             <section className="blog-recent">
                 <div className="blog-container relative-container">
                     <div className="recent-grid">
@@ -150,11 +139,9 @@ export default function Blog() {
                 </div>
             </section>
 
-            {/* Dark Featured Section */}
             <section className="blog-featured">
                 <div className="blog-container">
                     <div className="featured-grid-layout">
-                        {/* Left Column */}
                         <div className="featured-col-left">
                             <div className="featured-item large-item">
                                 <div className="featured-img-wrapper vertical-img">
@@ -176,7 +163,6 @@ export default function Blog() {
                             </div>
                         </div>
 
-                        {/* Right Column */}
                         <div className="featured-col-right">
                             <div className="featured-item">
                                 <div className="featured-img-wrapper landscape-img">
@@ -201,7 +187,6 @@ export default function Blog() {
                 </div>
             </section>
 
-            {/* Articles Section */}
             <section className="blog-articles">
                 <div className="blog-container">
                     <div className="articles-header">
@@ -232,7 +217,6 @@ export default function Blog() {
                 </div>
             </section>
 
-            {/* CTA Section */}
             <section className="blog-cta-section">
                 <div className="blog-container">
                     <div className="cta-content">

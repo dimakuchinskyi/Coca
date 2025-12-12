@@ -15,7 +15,6 @@ export default function Pricing() {
 		items.forEach((el) => {
 			const content = el.querySelector('.faq-answer');
 			if (!content) return;
-			// initialize
 			if (el.hasAttribute('open')) {
 				content.style.maxHeight = content.scrollHeight + 'px';
 				content.style.opacity = '1';
@@ -25,25 +24,19 @@ export default function Pricing() {
 				content.style.opacity = '0';
 				content.style.transform = 'translateY(-6px)';
 			}
-
-			// handler for toggle event
 			const onToggle = () => {
 				if (el.open) {
-					// open -> set to measured height then let CSS animate
 					content.style.maxHeight = content.scrollHeight + 'px';
 					content.style.opacity = '1';
 					content.style.transform = 'translateY(0)';
-					// after transition, clear maxHeight to allow responsive height
 					const clear = () => {
 						content.style.maxHeight = 'none';
 						content.removeEventListener('transitionend', clear);
 					};
 					content.addEventListener('transitionend', clear);
 				} else {
-					// close -> set to current height then force reflow and collapse
 					content.style.maxHeight = content.scrollHeight + 'px';
-					// force reflow
-					// eslint-disable-next-line no-unused-expressions
+					// eslint-disable-next-line
 					content.offsetHeight;
 					content.style.maxHeight = '0px';
 					content.style.opacity = '0';
@@ -98,7 +91,7 @@ export default function Pricing() {
 									<li className="muted">Customize Your Profile</li>
 									<li className="muted">Display Your Workshops</li>
 								</ul>
-								<button className="card-cta">Choose Plan</button>
+								<Link to="/contact#contact-top" className="card-cta">Choose Plan</Link>
 							</div>
 
 							<div className="pricing-card pricing-card--featured">
@@ -118,7 +111,7 @@ export default function Pricing() {
 									<li className="muted">Customize Your Profile</li>
 									<li className="muted">Display Your Workshops</li>
 								</ul>
-								<button className="card-cta card-cta--white">Chose Plan</button>
+								<Link to="/contact#contact-top" className="card-cta card-cta--white">Choose Plan</Link>
 							</div>
 
 							<div className="pricing-card">
@@ -137,7 +130,7 @@ export default function Pricing() {
 									<li>Customize Your Profile</li>
 									<li>Display Your Workshops</li>
 								</ul>
-								<button className="card-cta">Choose Plan</button>
+								<Link to="/contact#contact-top" className="card-cta">Choose Plan</Link>
 							</div>
 						</div>
 					</div>
