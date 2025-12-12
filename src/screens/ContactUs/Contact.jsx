@@ -294,6 +294,7 @@ export default function Contact() {
             <div className="container cta-inner">
               <div className="cta-left">
                 <h2 className="cta-title">Think beyond the wave</h2>
+                <div className="cta-desc-line-mobile"></div>
                 <p className="cta-desc">Ask about Sans products, pricing, implementation, or anything else. Our highly trained reps are standing by, ready to help</p>
               </div>
 

@@ -72,7 +72,7 @@ export default function Home() {
               <div className="hero-content-on-bg">
                 <h1 className="hero-title"><span className="nowrap">Digitally forward</span><br/>creative</h1>
                 <div className="hero-lead">
-                  <span className="hero-divider" aria-hidden="true"></span>
+                  <span className="hero-desc-line-mobile"></span>
                   <p className="hero-description">
                     When it comes to interactive<br/>
                     <span className="no-break-line">marketing, we've got you covered.</span><br/>
