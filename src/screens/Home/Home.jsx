@@ -7,6 +7,7 @@ import Footer from '../../components/Footer';
 
 export default function Home() {
   const navigate = useNavigate();
+  // const logo = require('../../assets/img/home/Logo.png'); // unused variable removed
   const testimonials = [
     {
       quoteLines: [

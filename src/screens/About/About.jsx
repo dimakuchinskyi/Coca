@@ -193,13 +193,13 @@ function CardsCarousel() {
     { src: imgRight, alt: 'right' },
   ]);
 
-  const rotateNext = () => {
-    setCards(prev => [prev[2], prev[0], prev[1]]);
-  };
+  // const rotateNext = () => {
+  //   setCards(prev => [prev[2], prev[0], prev[1]]);
+  // };
 
-  const rotatePrev = () => {
-    setCards(prev => [prev[1], prev[2], prev[0]]);
-  };
+  // const rotatePrev = () => {
+  //   setCards(prev => [prev[1], prev[2], prev[0]]);
+  // };
 
   return (
     <>

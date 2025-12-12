@@ -21,7 +21,7 @@ export default function Footer({ variant }){
     } catch (e) {
       // ignore
     }
-  }, []);
+  }, [logoAbout, variant]);
 
   return (
     <footer className={"site-footer" + (variant === 'about' ? ' site-footer--about' : '')}>
